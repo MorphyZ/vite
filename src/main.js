@@ -1,24 +1,46 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { card } from './card'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+let data = [
+  {
+    id: 1,
+    path: 'img/1.png',
+    title: 'Стул',
+    price: 5800
+  },
+  {
+    id: 2,
+    path: 'img/4.png',
+    title: 'Табуретка',
+    price: 6200
+  },
+  {
+    id: 3,
+    path: 'img/9.png',
+    title: 'Дачный стул',
+    price: 3500
+  },
+  {
+    id: 4,
+    path: 'img/10.png',
+    title: 'Кресло',
+    price: 9200
+  },
+  {
+    id: 5,
+    path: 'img/8.png',
+    title: 'Винтаж',
+    price: 1000
+  },
+  
+]
 
-setupCounter(document.querySelector('#counter'))
+const container = document.querySelector(".container");
+
+
+data.forEach((item)=>{
+
+  container.append(card(item));
+})
+
+
